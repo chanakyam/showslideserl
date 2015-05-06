@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pocket Slide Show</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />    	
+    <link href="/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />    
+    <script language="javascript" src="/js/html5.js"></script>
+    <script type='text/javascript' src='/js/jquery.min.js'></script>    
+    <!--<script src="/js/angular.min.js"></script>
+    <script src="/js/controllers.js"></script>   
+    <script src="/js/ui-bootstrap-tpls-0.6.0.js"></script>-->    
+    <script type='text/javascript' src='/js/jquery-1.7.1.min.js'></script>
+    
+    <script src="/js/play_video.js"></script>
+    <script type="text/javascript" src="http://jwpsrv.com/library/5V3tOP97EeK2SxIxOUCPzg.js"></script>
+<script type="text/javascript">jwplayer.key="L0SAYMTJJs/IIkeci5tG4vgIMGHAc6YFBtmJaA==";</script></script>   
+    <script type='text/javascript' src='/js/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='/js/jquery.easing.1.3.js'></script> 
+    <script>    
+    function epochToDate(epochSecs) { 
+      var m_names = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'); 
+      var d = new Date(new Date(0).setUTCSeconds(parseInt(epochSecs))); 
+      return (m_names[d.getMonth()]+ " " + d.getDate()+ " " + d.getFullYear()); 
+  }
+    </script>  
+    <!-- Pagination code start -->
+<script>
+//   //for video
+//   $(document).ready(function() {    
+//     // var vastURI = 'http://vast.optimatic.com/vast/getVast.aspx?id=p0ck37s1id35h0w&zone=vpaidtag&pageURL=[INSERT_PAGE_URL]&pageTitle=[INSERT_PAGE_TITLE]&cb=[CACHE_BUSTER]';
+//     var media_url1 = "http://video1.contentapi.ws/";
+//     var media_title1 = $('#video_tit1').val();
+//     var media_desc1 = $('#video_desc1').val();
+//     var media_duration1 = $('#video_duration1').val();
+//       // var vastURI = 'http://vast.optimatic.com/vast/getVast.aspx?id=w984i078l984&zone=vpaidtag&pageURL=[INSERT_PAGE_URL]&pageTitle=[INSERT_PAGE_TITLE]&cb=[CACHE_BUSTER]';
+//     var vastURI = 'http://vpc.altitude-arena.com/vpc.xml?uid=dok6fccef906a545&page_url=[REPLACE]&cb=[REPLACE]&ref_page_url=[REPLACE]&player_width=100%&player_height=364&video_duration='+media_duration1+'&media_file_url='+media_url1+'&media_file_title='+media_title1+'&media_description='+media_desc1+'&media_file_id=playVideo';
+//     function updateURL(vastURI){
+//     // Generate a huge random number
+//     var ord=Math.random(), protocol, host, port, path, pageUrl, updatedURI;
+//     var parsedFragments = parseUri(vastURI);
+//     ord = ord * 10000000000000000000;
+//     // Protocol of VAST URI
+//     protocol = parsedFragments.protocol;
+//     // VAST URI hostname
+//     host = parsedFragments.host;
+//     // VAST URI Path
+//     path = parsedFragments.path;
+//     //VAST Page Url
+//     pageUrl = parsedFragments.queryKey.pageUrl
+//     var fragmentString ='';
+//     //Updated URI
+//     for(var key in parsedFragments.queryKey){//console.log("abhii");console.log();
+//       // For Cache buster add a large random number
+//       if(key == 'cb'){
+//         fragmentString = fragmentString + key + '=' + ord + '&';  
+//       }
+//       // for referring Page URL, get the current document URL and encode the URI
+//       else if(key == 'page_url'){
+//         var currentUrl = document.URL;
+//         //var currentUrl = "http://test.com";
+//         fragmentString = fragmentString + key + '=' + currentUrl + '&'; 
+//       }else if(key == 'ref_page_url'){
+//       var currentUrl = document.URL;
+//       //var currentUrl = "http://test.com";
+//       fragmentString = fragmentString + key + '=' + currentUrl + '&'; 
+//     }else if(key == 'pageTitle'){
+//         //var currentTit = document.title;
+//         //var currentUrl = "http://test.com";
+//         var page_title=document.title;
+//         fragmentString = fragmentString + key + '=' + page_title + '&'; 
+//       }
+//       else{
+//         fragmentString = fragmentString + key + '=' + parsedFragments.queryKey[key] + '&';
+//       }
+      
+//     }
+
+//     updatedURI = protocol + '://' + host + path + '?' + fragmentString ;
+    
+//     // Remove the trailing & and return the updated URL
+//     return updatedURI.slice(0,-1);
+//     //return encodeURI(updatedURI.slice(0,-1)); 
+
+//     }
+
+//     // Parse URI to get qeury string like cb for cache buster and pageurl
+//   function parseUri (str) {
+//     var o   = parseUri.options,
+//       m   = o.parser[o.strictMode ? "strict" : "loose"].exec(str),
+//       uri = {},
+//       i   = 14;
+
+//     while (i--) uri[o.key[i]] = m[i] || "";
+
+//     uri[o.q.name] = {};
+//     uri[o.key[12]].replace(o.q.parser, function ($0, $1, $2) {
+//       if ($1) uri[o.q.name][$1] = $2;
+//     });
+
+//     return uri;
+//   };
+
+//   parseUri.options = {
+//     strictMode: false,
+//     key: ["source","protocol","authority","userInfo","user","password","host","port","relative","path","directory","file","query","anchor"],
+//     q:   {
+//       name:   "queryKey",
+//       parser: /(?:^|&)([^&=]*)=?([^&]*)/g
+//     },
+//     parser: {
+//       strict: /^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,
+//       loose:  /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/
+//     }
+//   };
+//   // end of code for generating cb,pagetit,pageurl
+
+// jwplayer('playVideo').setup({
+//   "flashplayer": "http://player.longtailvideo.com/player.swf",
+//   "playlist": [
+//     {
+//       "file": "http://video1.contentapi.ws/{{newsParam.video}}"
+//     }
+//   ],  
+//   "width": 612,
+//   "height": 350,
+//   stretching: "exactfit",
+//   autostart: false,
+//   "controlbar": {
+//     "position": "bottom"
+//   },
+//   "plugins": {
+//     "ova-jw": {
+//       "ads": {
+//         "companions": {
+//           "regions": [
+//             {
+//               "id": "companion",
+//               "width": 80,
+//               "height": 300
+//             }
+//           ]
+//         },
+//         "schedule": [
+//           {
+//             "position": "pre-roll",
+//             //"tag": "http://vast.optimatic.com/vast/getVast.aspx?id=s93akgl0y&zone=vpaidtag&pageURL=[INSERT_PAGE_URL]&pageTitle=[INSERT_PAGE_TITLE]&cb=[CACHE_BUSTER]"
+//             "tag": updateURL(vastURI)
+//           }
+//         ]
+//       },
+//       "debug": {
+//         "levels": "none"
+//       }
+//     }
+//   }
+// });
+// });
+
+  
+</script>
+<!-- end of pagination -->  
+  </head>
+  <body>
+    <div class="container">
+      <div class="topsection">
+      	<div class="topnav">
+	   <a href="/" >Home</a> <a href="/about">About</a> <a href="/contact">Contact</a>
+ 	</div>     
+          
+          <!-- TopRight end -->          
+      	<span class="clear"></span>
+      </div>
+      <!-- topsection end -->
+      <header>
+        <a href="/" title="Pocketslideshow" class="logo"><img src="/images/logo.png" alt=""></a>
+        <div class="topbanner"> <script src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=728X90&cwpid=557677&cwwidth=728&cwheight=90&cwpnet=1&cwtagid=213279"></script></div>
+      	<span class="clear"></span>
+      </header>
+      <!-- header end --> 
+  <nav>
+    <div class="navcontainer">
+      <div class="menu"> <span>MENU</span>
+        <ul class="Navigation">
+          <li> <a href="/" title="Now!" >Now!</a> </li>
+          <li><a href="/morenews?c=us_political&p=1" title="US Political News">US Political News</a></li>
+          <li><a href="/morenews?c=us_world_news&p=1" title="World News">World News</a></li>
+          <li><a href="/morenews?c=us_markets&p=1" title="US Markets">US Markets</a></li>
+	       <li><a href="/morenews?c=us_technology&p=1" title="Technology">Technology</a></li>
+	       <li><a href="/morenews?c=us_internet&p=1" title="Internet">Internet</a></li>
+         <li><a href="/morevideos?p=1" title="More World Videos" class="active">World Videos</a></li>          
+        </ul>
+      </div>
+      <!-- menu end --> 
+    </div>
+    <span class="clear"></span>
+  </nav>
+  <!-- nav end --> 
+  <section class="contentarea">  	
+  <aside class="leftcontent">	
+    <div class="slideshow">
+        <input type="hidden" name="video_name" id="video_name" value="{{newsParam.video}}" />
+        <input type="hidden" name="video_tit" id="video_tit" value="{{newsParam.title}}">
+        <input type="hidden" name="video_desc" id="video_desc" value="{{newsParam.description}}">
+        <input type="hidden" name="video_duration" id="video_duration" value="{{newsParam.duration}}">
+        <div class="module video-stream">                  
+          <div id="myElement">Loading the player...</div> 
+          <div class="video-title"><h2 class="videotitle">{{newsParam.title}}.  <span style="color:#FF9900;"> - <script> document.write(epochToDate({{ newsParam.uploaded_date }})) </script></span></h2> </div>             
+        </div>          
+      <!-- <span class="clear"></span> -->
+    </div>
+        <!-- slideshow end -->    
+    <!-- <div class="module">
+      <div class="module-title"><span>World Videos</span> </div>
+      <div class="module-inner"> 
+          <input type="hidden" name="video_tit1" id="video_tit1" value="{{newsParam.title}}">
+          <input type="hidden" name="video_desc1" id="video_desc1" value="{{newsParam.description}}">
+          <input type="hidden" name="video_duration1" id="video_duration1" value="{{newsParam.duration}}">       
+          <div id="playVideo">Loading the player...</div> 
+         <div class="inner-content">{{newsParam.description}}</div>
+      </div>      
+      <span class="clear"></span>
+    </div> -->
+    <div class="module">
+      <div class="module-title"><span>World Videos</span> </div>
+      <div class="module-inner">
+          {% for n in allnews %}
+             <div class="videow-colum" >
+               <a href="/playvideo/{{ n.id }}" title="{{ n.title }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}">
+               <p>{{n.title}} - {{n.upload_date}}</p>               
+               <span class="play"></span>
+               </a>
+             </div>
+         {% endfor %}          
+          </div>      
+        <span class="clear"></span>
+    </div>
+    <div class="module">
+      <div class="module-title"><span>World News</span> <a href="/morenews?c=us_world_news&p=1" class="more right">More News</a></div>
+      {% for n in worldnews %}      
+      <div class="wnews">
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
+      </div>      
+      {% endfor %}
+      <!-- NewsDiv end -->      
+      <span class="clear"></span> </div>
+    <!-- World News module end -->    
+    <div class="module">
+      <div class="module-title"><span>US Markets</span> <a href="/morenews?c=us_markets&p=1" class="more right">More News</a></div>
+      {% for n in usmarkets %}      
+      <div class="wnews">
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
+      </div>      
+      {% endfor %}
+      <!-- NewsDiv end -->      
+      <span class="clear"></span> </div>
+    <!-- US News module end -->    
+    <div class="module">
+      <div class="module-title"><span>Technology</span> <a href="/morenews?c=us_technology&p=1" class="more right">More News</a></div>
+      {% for n in ustechnology %}
+      <div class="wnews">
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
+      </div>
+      {% endfor %}
+      <span class="clear"></span>
+      </div>
+  <div class="module">
+      <div class="module-title"><span>Internet</span> <a href="/morenews?c=us_internet&p=1" class="more right">More News</a></div>
+      {% for n in usinternet %}
+      <div class="wnews">
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
+      </div>
+      {% endfor %}
+      <span class="clear"></span>
+      </div>
+      <!-- module end -->
+       
+    <!-- Top Stories module end -->  
+    
+	   
+  </aside>
+  <aside class="sidebar">
+  	<div class="padding10">
+      	         
+          <div class="rightad"><script src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=300X250&cwpid=557677&cwwidth=300&cwheight=250&cwpnet=1&cwtagid=213278"></script></div>
+      </div> 
+
+    <div class="padding10">
+    	<div class="rightad"><script src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=300X250&cwpid=557677&cwwidth=300&cwheight=250&cwpnet=1&cwtagid=213278"></script></div>
+
+<span class="clear"></span>
+
+      <div class="FieldLeft"><a class="twitter-timeline" href="https://twitter.com/pocketslideshow" data-widget-id="427798810710917120">Tweets by @pocketslideshow</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+<div class="twitterAdd"><script src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=160X600&cwpid=557677&cwwidth=160&cwheight=600&cwpnet=1&cwtagid=213277"></script></div>
+    </div>   
+  </aside>
+  <span class="clear"></span>
+  	<div class="bottom"><div class="ad1"><script src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=728X90&cwpid=557677&cwwidth=728&cwheight=90&cwpnet=1&cwtagid=213279"></script></div></div>
+  </section>    
+  </div>
+  <!-- container end -->
+  <footer>
+  	<div class="container">
+      <summary>
+          <span class="left">Copyright &copy;  {% now "Y" %}  pocketslideshow.com. All Rights Reserved | <a href=/termsandconditions>Terms & Conditions</a>.</span>
+          <span class="right">
+              <span class="left margin5">Follow Us on:</span>
+              <a href="#" target="_blank"><img src="/images/facebook.png"></a>
+              <a href="#" target="_blank"><img src="/images/twitter.png"></a>             
+          </span>
+      </summary>
+      </div>
+      <!-- container end -->
+  </footer>
+  <!-- footer end -->
+  </body>
+</html>

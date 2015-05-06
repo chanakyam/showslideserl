@@ -1,0 +1,18 @@
+{application, showslides,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {modules, []},
+  {registered, [showslides_sup]},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  lager,
+                  cowboy,
+                  jsx,
+                  ibrowse,
+                  erlydtl
+                 ]},
+  {mod, { showslides_app, []}},
+  {env, []}
+ ]}.
