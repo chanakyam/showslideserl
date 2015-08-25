@@ -1,8 +1,8 @@
 $(document).ready(function() {
   // var vastURI = 'http://vast.optimatic.com/vast/getVast.aspx?id=p0ck37s1id35h0w&zone=vpaidtag&pageURL=[INSERT_PAGE_URL]&pageTitle=[INSERT_PAGE_TITLE]&cb=[CACHE_BUSTER]';
   // var vastURI = 'http://vpc.altitude-arena.com/vpc.xml?uid=dok6fccef906a545&page_url=[REPLACE]&cb=[REPLACE]&ref_page_url=[REPLACE]&player_width=[REPLACE]&player_height=[REPLACE]&video_duration=[REPLACE]&media_file_url=[REPLACE]&media_file_title=[REPLACE]&media_description=[REPLACE]&media_file_id=[REPLACE]';
-  var video = "http://video1.contentapi.ws/"+$("#video_name").val();
-  var media_url = "http://video1.contentapi.ws/";
+  var video = "http://newscdn.lycos.com/world_news/"+$("#video_name").val();
+  var media_url = "http://newscdn.lycos.com/world_news/";
   var media_title = $('#video_tit').val();
   var media_desc = $('#video_desc').val();
   var media_duration = $('#video_duration').val();    

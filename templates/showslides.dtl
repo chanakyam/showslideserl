@@ -89,7 +89,7 @@
     <section>
       <div class="camera_wrap camera_magenta_skin" id="camera_wrap_2">
   	{% for img in newsParam.base_image %}
-	<div data-thumb="http://img1.contentapi.ws/{{ img }}" data-src="http://img1.contentapi.ws/{{ img }}" data-time="1700" data-trasPeriod="4000">    
+	<div data-thumb="http://newscdn.lycos.com/{{ img }}" data-src="http://newscdn.lycos.com/{{ img }}" data-time="1700" data-trasPeriod="4000">    
 	</div>
   	{% endfor %}
       </div>

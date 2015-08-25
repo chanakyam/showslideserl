@@ -80,7 +80,7 @@
       <div class="module-title"><span>US Political Stories</span> <a href="/morenews?c=us_political&p=1" class="more right">More News</a></div>
       {% for n in political %}
       <div class="NewsDiv">
-        <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div>
+        <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div>
         <div class="description">{{n.title}} - {{n.upload_date}}</div>
       </div>
       {% endfor %}
@@ -91,7 +91,7 @@
       <div class="module-title"><span>World News</span> <a href="/morenews?c=us_world_news&p=1" class="more right">More News</a></div>
       {% for n in worldnews %}      
       <div class="wnews">
-        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div> -->
         <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
       </div>      
       {% endfor %}
@@ -102,7 +102,7 @@
       <div class="module-title"><span>US Markets</span> <a href="/morenews?c=us_markets&p=1" class="more right">More News</a></div>
       {% for n in usmarkets %}      
       <div class="wnews">
-        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div> -->
         <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
       </div>      
       {% endfor %}
@@ -113,7 +113,7 @@
       <div class="module-title"><span>Technology</span> <a href="/morenews?c=us_technology&p=1" class="more right">More News</a></div>
       {% for n in ustechnology %}
       <div class="wnews">
-        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div> -->
         <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
       </div>
       {% endfor %}
@@ -123,7 +123,7 @@
       <div class="module-title"><span>Internet</span> <a href="/morenews?c=us_internet&p=1" class="more right">More News</a></div>
       {% for n in usinternet %}
       <div class="wnews">
-        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div> -->
         <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
       </div>
       {% endfor %}

@@ -227,7 +227,7 @@
       <div class="module-inner">
           {% for n in allnews %}
              <div class="videow-colum" >
-               <a href="/playvideo/{{ n.id }}" title="{{ n.title }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}">
+               <a href="/playvideo/{{ n.id }}" title="{{ n.title }}"><img src="http://newscdn.lycos.com/world_news/{{n.thumb_image}}">
                <p>{{n.title}} - {{n.upload_date}}</p>               
                <span class="play"></span>
                </a>
@@ -240,7 +240,7 @@
       <div class="module-title"><span>World News</span> <a href="/morenews?c=us_world_news&p=1" class="more right">More News</a></div>
       {% for n in worldnews %}      
       <div class="wnews">
-        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div> -->
         <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
       </div>      
       {% endfor %}
@@ -251,7 +251,7 @@
       <div class="module-title"><span>US Markets</span> <a href="/morenews?c=us_markets&p=1" class="more right">More News</a></div>
       {% for n in usmarkets %}      
       <div class="wnews">
-        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div> -->
         <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
       </div>      
       {% endfor %}
@@ -262,7 +262,7 @@
       <div class="module-title"><span>Technology</span> <a href="/morenews?c=us_technology&p=1" class="more right">More News</a></div>
       {% for n in ustechnology %}
       <div class="wnews">
-        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div> -->
         <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
       </div>
       {% endfor %}
@@ -272,7 +272,7 @@
       <div class="module-title"><span>Internet</span> <a href="/morenews?c=us_internet&p=1" class="more right">More News</a></div>
       {% for n in usinternet %}
       <div class="wnews">
-        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://img1.contentapi.ws/{{n.thumb_image}}" alt=""></a></div> -->
+        <!-- <div class="thumbdiv"><a href="/show/{{ n.id }}"><img src="http://newscdn.lycos.com/{{n.thumb_image}}" alt=""></a></div> -->
         <div class="description"><a href="/show/{{ n.id }}">{{n.title}} - {{n.upload_date}}</a></div>
       </div>
       {% endfor %}
